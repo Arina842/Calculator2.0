@@ -1,7 +1,6 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QMessageBox
-import math as mt
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
