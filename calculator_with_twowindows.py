@@ -360,7 +360,24 @@ class Ui_Dialog(object):
 "}")
         self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.listWidget = QtWidgets.QListWidget(parent=Dialog)
+        self.listWidget = pg.PlotWidget(parent=Dialog)
+        time = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        temperature = [30, 32, 34, 32, 33, 31, 29, 32, 35, 30]
+        self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
+        self.verticalLayout.setObjectName("verticalLayout")
+        pen = pg.mkPen(color=(200,200, 200))
+        self.listWidget.plot(time, temperature, pen=pen)
+        self.listWidget.setTitle('<span style=" color: white;font-size: 24px">График</span>')
+        self.listWidget.setLabel(
+            "left",
+            '<span style=" color:white; font-size: 16px">Temperature (°C)</span>'
+        )
+
+        self.listWidget.setLabel(
+            "bottom",
+            '<span style=" color: white;font-size: 16px">Time (min)</span>'
+        )
+        self.listWidget.setBackground("#121212")
         self.listWidget.setEnabled(True)
         self.listWidget.setMinimumSize(QtCore.QSize(0, 0))
         self.listWidget.setObjectName("listWidget")
