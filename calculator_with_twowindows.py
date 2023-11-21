@@ -383,11 +383,6 @@ class Ui_Dialog(object):
         self.lineEdit.setText(_translate("Dialog", "y="))
         self.lineEdit_2.setText(_translate("Dialog", "х="))
         self.lineEdit.clicked.connect(self.write_number)
-    def write_number(self, number):
-        if self.lineEdit.text() == "y=":
-            self.lineEdit.setText(number)
-        else:
-            self.lineEdit.setText(self.lineEdit.text() + number)
 
 if __name__ == "__main__":
     import sys
