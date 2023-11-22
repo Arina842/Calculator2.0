@@ -329,13 +329,20 @@ class Ui_MainWindow(object):
         self.lineEdit.setText(str(rounded_res))
 
     def show_plot(self):
-        dialog = QtWidgets.QDialog()
-        dialog.show()
-        x = range(0, 12)
-        y = range(0, 12)
-        plt.title('График')
-        plt.plot(x, y)
-        plt.show()
+        #dialog = QtWidgets.QDialog()
+        #dialog.show()
+        #x = range(0, 12)
+        #y = range(0, 12)
+        #plt.title('График')
+       # plt.plot(x, y)
+        #plt.show()
+        if __name__ == "__main__":
+            import sys
+            Dialog = QtWidgets.QDialog()
+            uid = Ui_Dialog()
+            uid.setupUi(Dialog)
+            Dialog.show()
+            sys.exit(app.exec())
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -363,8 +370,6 @@ class Ui_Dialog(object):
         self.listWidget = pg.PlotWidget(parent=Dialog)
         time = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         temperature = [30, 32, 34, 32, 33, 31, 29, 32, 35, 30]
-        self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
-        self.verticalLayout.setObjectName("verticalLayout")
         pen = pg.mkPen(color=(200,200, 200))
         self.listWidget.plot(time, temperature, pen=pen)
         self.listWidget.setTitle('<span style=" color: white;font-size: 24px">График</span>')
@@ -399,7 +404,14 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.lineEdit.setText(_translate("Dialog", "y="))
         self.lineEdit_2.setText(_translate("Dialog", "х="))
-        self.lineEdit.clicked.connect(self.write_number)
+
+    def show_plot(self):
+        self.listWidget =pg.PlotWidget()
+        x = range(0, 12)
+        y = range(0, 12)
+        plt.title('График')
+        plt.plot(x, y)
+        plt.show()
 
 if __name__ == "__main__":
     import sys
@@ -415,6 +427,7 @@ if __name__ == "__main__":
     uid.setupUi(Dialog)
     Dialog.show()
     sys.exit(app.exec())
+
 
 
 
