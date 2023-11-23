@@ -1,17 +1,12 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6 import QtCore, QtGui, QtWidgets
 import sys
-from PyQt6.QtWidgets import QWidget, QApplication,QVBoxLayout
+from PyQt6.QtWidgets import QWidget, QApplication,QVBoxLayout, QDialog
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
-from PyQt6 import QtWidgets
 from pyqtgraph import PlotWidget, plot
 import pyqtgraph as pg
-import sys  # We need sys so that we can pass argv to QApplication
 import os
 import matplotlib.pyplot as plt
-from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QDialog
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -395,13 +390,6 @@ class Ui_Dialog(object):
         self.lineEdit.setText(_translate("Dialog", "y="))
         self.lineEdit_2.setText(_translate("Dialog", "х="))
 
-    def show_plot(self, Dialog):
-        self.listWidget =pg.PlotWidget()
-        x = range(0, 12)
-        y = range(0, 12)
-        plt.title('График')
-        plt.plot(x, y)
-        plt.show()
 
 
 if __name__ == "__main__":
@@ -419,7 +407,3 @@ if __name__ == "__main__":
     ui.setPlot(Dialog)
     #Dialog.show()
     sys.exit(app.exec())
-
-
-
-
