@@ -349,7 +349,7 @@ class Ui_Dialog(object):
 "QListWidget{\n"
 "     background-color: transparent ;\n"
 "    border: none;\n"
-"}")
+"}\n")
         self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout.setObjectName("verticalLayout")
 
@@ -364,8 +364,6 @@ class Ui_Dialog(object):
         self.canvas.draw()
         self.verticalLayout.addWidget(self.canvas)
 
-
-
         self.lineEdit = QtWidgets.QLineEdit(parent=Dialog)
         self.lineEdit.setMinimumSize(QtCore.QSize(0, 30))
         self.lineEdit.setObjectName("lineEdit")
@@ -376,16 +374,36 @@ class Ui_Dialog(object):
         self.verticalLayout.addWidget(self.lineEdit_2)
 
         self.Button_1 = QtWidgets.QPushButton(parent=Dialog)
-        self.Button_1.setMinimumSize(QtCore.QSize(0, 30))
+        self.Button_1.setMinimumSize(QtCore.QSize(0, 40))
         self.Button_1.setObjectName("")
         self.verticalLayout.addWidget(self.Button_1)
         self.Button_1.clicked.connect(self.show_plot)
+        self.Button_2 = QtWidgets.QPushButton(parent=Dialog)
+        self.Button_2.setMinimumSize(QtCore.QSize(0, 20))
+        self.Button_2.setObjectName("")
+        self.Button_2.clicked.connect(self.delete_xy)
+        self.verticalLayout.addWidget(self.Button_2)
+        self.Button_3 = QtWidgets.QPushButton(parent=Dialog)
+        self.Button_3.setMinimumSize(QtCore.QSize(0, 20))
+        self.Button_3.setObjectName("")
+        self.Button_3.clicked.connect(self.clear_all)
+        self.verticalLayout.addWidget(self.Button_3)
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
 
+    def delete_xy (self, Dialog):
+
+        self.lineEdit.setText('y=')
+        self.lineEdit_2.setText('x=')
 
 
+    def clear_all(self, Dialog):
+
+        self.lineEdit.setText('y=')
+        self.lineEdit_2.setText('x=')
+        self.ax_G.cla()
+        self.canvas.draw()
 
     def show_plot(self,Dialog):
 
@@ -407,6 +425,8 @@ class Ui_Dialog(object):
         self.lineEdit.setText(_translate("Dialog", "y="))
         self.lineEdit_2.setText(_translate("Dialog", "x="))
         self.Button_1.setText(_translate("Dialog", "Create"))
+        self.Button_2.setText(_translate("Dialog", "Delete x, y"))
+        self.Button_3.setText(_translate("Dialog", "Clear all"))
 
 
 
@@ -426,4 +446,3 @@ if __name__ == "__main__":
     uid.setupUi(Dialog)
     ui.setPlot(Dialog)
     sys.exit(app.exec())
-    
