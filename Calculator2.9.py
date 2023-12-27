@@ -285,9 +285,14 @@ class Ui_MainWindow(object):
         self.Button_division.setText(_translate("MainWindow", "/"))
         self.Button_division.setShortcut(_translate("MainWindow", "/"))
         self.Button_C.setText(_translate("MainWindow", "C"))
-        self.Button_C.setShortcut(_translate("MainWindow", "Backspace"))
+        self.Button_C.setShortcut(_translate("MainWindow", ""))
+        self.Button_del1.setText(_translate("MainWindow", "X"))
+        self.Button_del1.setShortcut(_translate("MainWindow", "Backspace"))
         self.Button_point.setText(_translate("MainWindow", "."))
         self.Button_point.setShortcut(_translate("MainWindow", "."))
+        self.Button_parentheses.setText(_translate("MainWindow", "()"))
+        self.Button_parentheses.setShortcut(_translate("MainWindow", "()"))
+
 
 
     def add_function(self):
@@ -306,6 +311,7 @@ class Ui_MainWindow(object):
         self.Button_division.clicked.connect(lambda: self.write_number(self.Button_division.text()))
         self.Button_multiply.clicked.connect(lambda: self.write_number(self.Button_multiply.text()))
         self.Button_point.clicked.connect(lambda: self.write_number(self.Button_point.text()))
+        self.Button_del1.clicked.connect(self.del1)
         self.Button_Graph.clicked.connect(self.show_plot)
         self.Button_C.clicked.connect(self.clear_all)
         self.Button_CE.clicked.connect(self.clear_entry)
@@ -316,24 +322,27 @@ class Ui_MainWindow(object):
             self.lineEdit.setText(number)
         else:
             self.lineEdit.setText(self.lineEdit.text() + number)
-            k = list(self.lineEdit.text()[-2:])
+            k = self.lineEdit.text()[-2:]
             l = ''.join(k)
             if l == '/0':
                 self.label.setText('Делить на ноль нельзя!!!')
-                k = list(self.lineEdit.text()[:-1])
+                k = self.lineEdit.text()[:-1]
                 l = ''.join(k)
                 self.lineEdit.setText(l)
                 #while l == 'self.Button_ravno.blockSignals(True)
             if l == '..' or l == '++' or l == '--' or l == '//' or l == '-*' or l == '+-+'or l == '-+-':
-                k = list(self.lineEdit.text()[:-1])
+                k = self.lineEdit.text()[:-1]
                 l = ''.join(k)
                 self.lineEdit.setText(l)
             if l == '/*' or l == '*/' or l == '.-' or l == '-.' or l == '+.' or l == '.+':
-                k = list(self.lineEdit.text()[:-2] + self.lineEdit.text()[-1:])
+                k = self.lineEdit.text()[:-2] + self.lineEdit.text()[-1:]
                 l = ''.join(k)
                 self.lineEdit.setText(l)
 
-
+    def del1(self):
+        k = self.lineEdit.text()[:-1]
+        l = ''.join(k)
+        self.lineEdit.setText(l)
     def clear_all(self) -> None:
         self.lineEdit.setText('0')
         self.label.setText(' ')
@@ -341,8 +350,7 @@ class Ui_MainWindow(object):
     def clear_entry(self) -> None:
         self.lineEdit.setText('0')
 
-    #def dell_hundred(self) -> None:
-        #self.lineEdit.setText(self.lineEdit.text() + '/100')
+
 
 
     def results(self):
@@ -394,10 +402,8 @@ class Ui_Dialog(object):
         self.canvas = FigureCanvas(self.figure)
         self.ax_G = self.figure.add_subplot()
         self.ax_G.set_ylabel("y", fontsize=11)
-
         self.ax_G.set_xlabel("x", fontsize=11)
         self.ax_G.grid()
-
         self.canvas.draw()
         self.verticalLayout.addWidget(self.canvas)
 
