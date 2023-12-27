@@ -1,7 +1,7 @@
 import numpy as np
 from PyQt6 import QtCore, QtGui, QtWidgets
 import sys
-from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QDialog
+from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QDialog, QLabel,QMessageBox
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg  as FigureCanvas
 from matplotlib.figure import Figure
 import os
@@ -43,14 +43,14 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy)
-        self.label.setStyleSheet("font-size: 12pt;" "color: #888")
+        self.label.setStyleSheet("font-size: 10.5pt;" "color: #888")
         self.label.setLineWidth(25)
         self.label.setAlignment(
             QtCore.Qt.AlignmentFlag.AlignRight | QtCore.Qt.AlignmentFlag.AlignTrailing | QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
         self.lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit.setStyleSheet("font-size: 36pt;\n"
+        self.lineEdit.setStyleSheet("font-size: 40pt;\n"
                                     "border: none;")
         self.lineEdit.setMaxLength(25)
         self.lineEdit.setAlignment(
@@ -75,7 +75,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_Graph.sizePolicy().hasHeightForWidth())
         self.Button_Graph.setSizePolicy(sizePolicy)
         self.Button_Graph.setObjectName("pushButton_25")
-        self.Layout_buttons.addWidget(self.Button_Graph, 1, 4, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_Graph, 1, 5, 1, 1)
         self.Button_3 = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -99,7 +99,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_equal.sizePolicy().hasHeightForWidth())
         self.Button_equal.setSizePolicy(sizePolicy)
         self.Button_equal.setObjectName("Button_ravno")
-        self.Layout_buttons.addWidget(self.Button_equal, 5, 5, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_equal, 5, 4, 1, 1)
         self.Button_CE = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -115,7 +115,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_multiply.sizePolicy().hasHeightForWidth())
         self.Button_multiply.setSizePolicy(sizePolicy)
         self.Button_multiply.setObjectName("Button_mnog")
-        self.Layout_buttons.addWidget(self.Button_multiply, 2, 5, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_multiply, 2, 4, 1, 1)
         self.Button_minus = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -123,7 +123,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_minus.sizePolicy().hasHeightForWidth())
         self.Button_minus.setSizePolicy(sizePolicy)
         self.Button_minus.setObjectName("Button_minus")
-        self.Layout_buttons.addWidget(self.Button_minus, 3, 5, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_minus, 3, 4, 1, 1)
         self.Button_4 = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_plus.sizePolicy().hasHeightForWidth())
         self.Button_plus.setSizePolicy(sizePolicy)
         self.Button_plus.setObjectName("Button_plus")
-        self.Layout_buttons.addWidget(self.Button_plus, 4, 5, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_plus, 4, 4, 1, 1)
         self.Button_division = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -147,7 +147,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_division.sizePolicy().hasHeightForWidth())
         self.Button_division.setSizePolicy(sizePolicy)
         self.Button_division.setObjectName("Button_delenie")
-        self.Layout_buttons.addWidget(self.Button_division, 1, 5, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_division, 1, 4, 1, 1)
         self.Button_C = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -228,7 +228,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_parentheses.sizePolicy().hasHeightForWidth())
         self.Button_parentheses.setSizePolicy(sizePolicy)
         self.Button_parentheses.setObjectName("Button_skobki")
-        self.Layout_buttons.addWidget(self.Button_parentheses, 2, 4, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_parentheses, 2, 5, 1, 1)
         self.Button_square = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -236,7 +236,23 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_square.sizePolicy().hasHeightForWidth())
         self.Button_square.setSizePolicy(sizePolicy)
         self.Button_square.setObjectName("Button_sqrt")
-        self.Layout_buttons.addWidget(self.Button_square, 3, 4, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_square, 3, 5, 1, 1)
+        self.Button_22 = QtWidgets.QPushButton(parent=self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.Button_22.sizePolicy().hasHeightForWidth())
+        self.Button_22.setSizePolicy(sizePolicy)
+        self.Button_22.setObjectName("Button_sqrt")
+        self.Layout_buttons.addWidget(self.Button_square, 4, 5, 1, 1)
+        self.Button_23 = QtWidgets.QPushButton(parent=self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.Button_23.sizePolicy().hasHeightForWidth())
+        self.Button_23.setSizePolicy(sizePolicy)
+        self.Button_23.setObjectName("Button_sqrt")
+        self.Layout_buttons.addWidget(self.Button_23, 5, 5, 1, 1)
         self.verticalLayout.addLayout(self.Layout_buttons)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -451,19 +467,24 @@ class Ui_Dialog(object):
         self.ax_G.set_xlabel("x")
         self.canvas.draw()
 
-    def show_plot(self,Dialog):
-
-        y = self.lineEdit.text()
-        x = self.lineEdit_2.text()
-        if 'y=' in y or 'x=' in x:
-            y = y.replace('y=', '')
-            x = x.replace('x=', '')
-        y = y.split(',')
-        y = list(map(int, y))
-        x = x.split(',')
-        x = list(map(int, x))
-        self.ax_G.plot(x, y)
-        self.canvas.draw()
+    def show_plot(self, Dialog):
+        try:
+            y = self.lineEdit.text()
+            x = self.lineEdit_2.text()
+            if 'y=' in y or 'x=' in x:
+                y = y.replace('y=', '')
+                x = x.replace('x=', '')
+            y = y.split(',')
+            y = list(map(int, y))
+            x = x.split(',')
+            x = list(map(int, x))
+            self.ax_G.plot(x, y)
+            self.canvas.draw()
+        except:
+            dlg = QMessageBox()
+            dlg.setWindowTitle("Ошибка")
+            dlg.setText("Введите другие значения")
+            dlg.exec()
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
