@@ -484,6 +484,7 @@ class Ui_Dialog(object):
             dlg = QMessageBox()
             dlg.setWindowTitle("Ошибка")
             dlg.setText("Введите другие значения")
+            dlg.move(1200, 350)
             dlg.exec()
 
     def retranslateUi(self, Dialog):
