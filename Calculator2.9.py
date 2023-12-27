@@ -302,7 +302,7 @@ class Ui_MainWindow(object):
         self.Button_division.setShortcut(_translate("MainWindow", "/"))
         self.Button_C.setText(_translate("MainWindow", "C"))
         self.Button_C.setShortcut(_translate("MainWindow", ""))
-        self.Button_del1.setText(_translate("MainWindow", "X"))
+        self.Button_del1.setText(_translate("MainWindow", "🖾"))
         self.Button_del1.setShortcut(_translate("MainWindow", "Backspace"))
         self.Button_point.setText(_translate("MainWindow", "."))
         self.Button_point.setShortcut(_translate("MainWindow", "."))
@@ -341,7 +341,7 @@ class Ui_MainWindow(object):
             k = self.lineEdit.text()[-2:]
             l = ''.join(k)
             if l == '/0':
-                self.label.setText('Делить на ноль нельзя!!!')
+                self.label.setText('Division by zero is not possible')
                 k = self.lineEdit.text()[:-1]
                 l = ''.join(k)
                 self.lineEdit.setText(l)
@@ -376,7 +376,7 @@ class Ui_MainWindow(object):
             rounded_res = round(res, 4)
             self.lineEdit.setText(str(rounded_res))
         except:
-            self.label.setText('Неправильный ввод')
+            self.label.setText('incorrect input')
             self.lineEdit.setText('0')
 
 
@@ -482,8 +482,8 @@ class Ui_Dialog(object):
             self.canvas.draw()
         except:
             dlg = QMessageBox()
-            dlg.setWindowTitle("Ошибка")
-            dlg.setText("Введите другие значения")
+            dlg.setWindowTitle("Mistake")
+            dlg.setText("Enter other values")
             dlg.move(1200, 350)
             dlg.exec()
 
