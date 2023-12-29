@@ -6,9 +6,6 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QWidget, QApplication, QVBoxLayout, QDialog, QLabel,QMessageBox
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg  as FigureCanvas
 
-
-
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -151,7 +148,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_Graph.sizePolicy().hasHeightForWidth())
         self.Button_Graph.setSizePolicy(sizePolicy)
         self.Button_Graph.setObjectName("pushButton_25")
-        self.Layout_buttons.addWidget(self.Button_Graph, 1, 5, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_Graph, 1, 0, 1, 2)
 
         self.Button_CE = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
@@ -160,7 +157,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_CE.sizePolicy().hasHeightForWidth())
         self.Button_CE.setSizePolicy(sizePolicy)
         self.Button_CE.setObjectName("Button_del")
-        self.Layout_buttons.addWidget(self.Button_CE, 1, 1, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_CE, 1, 4, 1, 1)
         self.Button_C = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -168,7 +165,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_C.sizePolicy().hasHeightForWidth())
         self.Button_C.setSizePolicy(sizePolicy)
         self.Button_C.setObjectName("pushButton_26")
-        self.Layout_buttons.addWidget(self.Button_C, 1, 0, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_C, 1, 3, 1, 1)
         self.Button_del1 = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -176,7 +173,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_del1.sizePolicy().hasHeightForWidth())
         self.Button_del1.setSizePolicy(sizePolicy)
         self.Button_del1.setObjectName("Button_delenie")
-        self.Layout_buttons.addWidget(self.Button_del1, 1, 3, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_del1, 1, 5, 1, 1)
 
         self.Button_multiply = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
@@ -217,8 +214,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_division.sizePolicy().hasHeightForWidth())
         self.Button_division.setSizePolicy(sizePolicy)
         self.Button_division.setObjectName("Button_delenie")
-        self.Layout_buttons.addWidget(self.Button_division, 1, 4, 1, 1)
-
+        self.Layout_buttons.addWidget(self.Button_division, 2, 5, 1, 1)
         self.Button_point = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -227,9 +223,6 @@ class Ui_MainWindow(object):
         self.Button_point.setSizePolicy(sizePolicy)
         self.Button_point.setObjectName("Button_point")
         self.Layout_buttons.addWidget(self.Button_point, 5, 3, 1, 1)
-
-
-        self.verticalLayout.addLayout(self.Layout_buttons)
         self.Button_parentheses1 = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -237,7 +230,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_parentheses1.sizePolicy().hasHeightForWidth())
         self.Button_parentheses1.setSizePolicy(sizePolicy)
         self.Button_parentheses1.setObjectName("Button_skobki")
-        self.Layout_buttons.addWidget(self.Button_parentheses1, 2, 5, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_parentheses1, 3, 5, 1, 1)
         self.Button_square = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -245,7 +238,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_square.sizePolicy().hasHeightForWidth())
         self.Button_square.setSizePolicy(sizePolicy)
         self.Button_square.setObjectName("Button_sqrt")
-        self.Layout_buttons.addWidget(self.Button_square, 4, 5, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_square, 5, 5, 1, 1)
         self.Button_parentheses2 = QtWidgets.QPushButton(parent=self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -253,18 +246,10 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.Button_parentheses2.sizePolicy().hasHeightForWidth())
         self.Button_parentheses2.setSizePolicy(sizePolicy)
         self.Button_parentheses2.setObjectName("Button_sqrt")
-        self.Layout_buttons.addWidget(self.Button_parentheses2, 3, 5, 1, 1)
-        self.Button_root = QtWidgets.QPushButton(parent=self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.Button_root.sizePolicy().hasHeightForWidth())
-        self.Button_root.setSizePolicy(sizePolicy)
-        self.Button_root.setObjectName("Button_sqrt")
-        self.Layout_buttons.addWidget(self.Button_root, 5, 5, 1, 1)
+        self.Layout_buttons.addWidget(self.Button_parentheses2, 4, 5, 1, 1)
+        
         self.verticalLayout.addLayout(self.Layout_buttons)
         MainWindow.setCentralWidget(self.centralwidget)
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -320,9 +305,6 @@ class Ui_MainWindow(object):
         self.Button_parentheses2.setShortcut(_translate("MainWindow", ")"))
         self.Button_square.setText(_translate("MainWindow", "^"))
         self.Button_square.setShortcut(_translate("MainWindow", "^"))
-        self.Button_root.setText(_translate("MainWindow", "√"))
-
-
 
     def add_function(self):
         self.Button_0.clicked.connect(lambda: self.write_number(self.Button_0.text()))
@@ -343,7 +325,6 @@ class Ui_MainWindow(object):
         self.Button_parentheses1.clicked.connect(lambda: self.write_number(self.Button_parentheses1.text()))
         self.Button_parentheses2.clicked.connect(lambda: self.write_number(self.Button_parentheses2.text()))
         self.Button_square.clicked.connect(lambda: self.write_number(self.Button_square.text()))
-        self.Button_root.clicked.connect(lambda: self.write_number(self.Button_root.text()))
         self.Button_del1.clicked.connect(self.del1)
         self.Button_Graph.clicked.connect(self.show_plot)
         self.Button_C.clicked.connect(self.clear_all)
@@ -388,17 +369,12 @@ class Ui_MainWindow(object):
             k = self.lineEdit.text()
             if '^' in k:
                 k = k.replace('^','**')
-            if '√' in k:
-                k = k.replace('√','**(1/2)')
             res = eval(k)
             rounded_res = round(res, 4)
             self.lineEdit.setText(str(rounded_res))
         except:
             self.label.setText('incorrect input')
             self.lineEdit.setText('0')
-
-
-
 
     def show_plot(self):
         self.plotDialog.show()
@@ -428,7 +404,14 @@ class Ui_Dialog(object):
 "QListWidget{\n"
 "     background-color: transparent ;\n"
 "     border: none;\n"
-"}\n")
+"}\n"
+"QPushButton:hover {\n"
+"    background-color:#666 ;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color:#777 ;\n"
+"}"
+)
         self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout.setObjectName("verticalLayout")
 
@@ -470,15 +453,11 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-
     def delete_xy (self, Dialog):
-
         self.lineEdit.setText('y=')
         self.lineEdit_2.setText('x=')
 
-
     def clear_all(self, Dialog):
-
         self.lineEdit.setText('y=')
         self.lineEdit_2.setText('x=')
         self.ax_G.cla()
@@ -515,9 +494,6 @@ class Ui_Dialog(object):
         self.Button_1.setText(_translate("Dialog", "Create"))
         self.Button_2.setText(_translate("Dialog", "Delete x, y"))
         self.Button_3.setText(_translate("Dialog", "Clear all"))
-
-
-
 
 
 if __name__ == "__main__":
