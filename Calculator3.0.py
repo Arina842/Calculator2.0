@@ -370,7 +370,7 @@ class Ui_MainWindow(object):
             if '^' in k:
                 k = k.replace('^','**')
             res = eval(k)
-            rounded_res = round(res, 4)
+            rounded_res = f'{res:.4f}'
             self.lineEdit.setText(str(rounded_res))
         except:
             self.label.setText('incorrect input')
